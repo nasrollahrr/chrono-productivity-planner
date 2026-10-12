@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⏱️ Chrono Pro — 24-Hour Unified Daily Productivity Engine
 
-## Getting Started
+A modular, proactive daily productivity dashboard and time-blocking application built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **SQLite / LocalStorage offline persistence**.
 
-First, run the development server:
+Inspired by modern tools like **Linear**, **Sunsama**, and **Cron / Notion Calendar**.
 
+---
+
+## ✨ Features
+
+- **🕒 24-Hour Proactive Time-Blocking Timeline:**
+  - Full 24-hour vertical timeline grid spanning `00:00` to `24:00` (48 thirty-minute slots).
+  - Smart auto-scroll (`useRef`) on mount that centers the live pulsing time indicator line in the viewport.
+  - Priority-coded timeblocks:
+    - **P1 [Must Do]:** Vivid crimson accent with high visual weight.
+    - **P2 [Should Do]:** Warm amber badge.
+    - **P3 [Quick Win]:** Emerald compact badge.
+  - Interactive direct checkbox, context menus, and drag-to-resize duration in 15-minute increments.
+
+- **⏰ Proactive 15-Minute Task Reminder System:**
+  - Background polling engine checking every 30 seconds for upcoming scheduled tasks.
+  - Synthesized dual-tone harmonic sound chime using the **Web Audio API** ($587.33\text{ Hz}\ [\text{D}_5] \rightarrow 880.00\text{ Hz}\ [\text{A}_5]$) requiring zero MP3 assets.
+  - Floating top-right in-app toast with countdown progress and priority indicators.
+  - Native Web Notifications API desktop alerts that appear even when minimized.
+  - Navbar bell icon (`🔔`) showing permission status (`active`, `pending`, `denied`) and audio test chime trigger.
+
+- **📥 Unscheduled Inbox & Drag-and-Drop:**
+  - Capture tasks on the fly into an inbox backlog.
+  - Drag tasks directly onto any timeline slot or click "Schedule" to automatically snap into the next open hour.
+
+- **🎯 Pinned "North Star" Banner:**
+  - Sleek horizontal banner pinned at the top for today's singular focus objective.
+
+- **🔥 Daily Habit Streak Tracker:**
+  - Daily toggle checklist with consecutive streak counters and 7-day trend sparklines.
+
+- **🌙 2-Minute End-of-Day Debrief:**
+  - Daily shutdown review modal capturing ratings, wins, blockers, and automated rollover of unfinished tasks to tomorrow.
+
+- **⌨️ Keyboard-First Shortcuts:**
+  - `T`: Jump to Today
+  - `N`: Quick-schedule at current hour slot
+  - `[` / `]`: Navigate Previous / Next Day
+  - `⌘K` / `Ctrl+K`: Global command palette
+  - `R`: Trigger End-of-Day Debrief
+  - `D`: Toggle Dark / Light mode
+  - `?`: Open keyboard cheatsheet
+
+- **🛡️ Bulletproof Persistence & Clean Slate:**
+  - Zero hardcoded mock tasks.
+  - Instant offline responsiveness with `localStorage` lazy state initialization.
+  - Reconciled SQLite persistence via Next.js Route Handlers (`/api/sync`).
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- Node.js 18+ (tested on Node v26)
+- npm or pnpm
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd vibrant-oppenheimer
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Run Development Server
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Build for Production
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Deploying to GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To push this repository to your GitHub account:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# 1. Create a new empty repository on GitHub (e.g., chrono-planner)
+# 2. Link your remote repository:
+git remote add origin https://github.com/<your-username>/<your-repo-name>.git
 
-## Deploy on Vercel
+# 3. Rename branch to main (already set):
+git branch -M main
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 4. Push your commits:
+git push -u origin main
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS (Dark Linear palette)
+- **Icons:** Lucide React
+- **Audio:** Web Audio API (Synthesized Oscillators)
+- **Database:** Local SQLite (`better-sqlite3`) + `localStorage` fallback
+- **VFX:** `canvas-confetti`
