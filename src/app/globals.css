@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --sidebar: #f1f5f9;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card: #121215;
+  --border: #27272a;
+  --sidebar: #0f0f12;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar for distraction-free look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.45);
+}
+
+/* Dedicated sleek timeline & sidebar scrollbar */
+.custom-timeline-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-timeline-scrollbar::-webkit-scrollbar-track {
+  background: rgba(11, 13, 19, 0.5);
+}
+
+.custom-timeline-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.45);
+  border-radius: 9999px;
+}
+
+.custom-timeline-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 63, 94, 0.7);
+}
+
+/* High contrast glass & glow effects */
+.linear-glow {
+  box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.15);
+}
+
+.dark .linear-glow {
+  box-shadow: 0 0 25px -4px rgba(99, 102, 241, 0.25);
+}
